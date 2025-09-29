@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>สมัครสมาชิก - Cherry on Top</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #fce9f7;
+      margin: 0; padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 2rem 3rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(255, 105, 180, 0.2);
+      width: 360px;
+      text-align: center;
+    }
+    h1 {
+      color: #d94fe2;
+      margin-bottom: 1rem;
+    }
+    form {
+      text-align: left;
+    }
+    label {
+      display: block;
+      margin: 0.8rem 0 0.3rem;
+      color: #b153d9;
+      font-weight: 600;
+    }
+    input[type="text"],
+    input[type="password"],
+    input[type="file"] {
+      width: 100%;
+      padding: 0.5rem 0.6rem;
+      border: 1.8px solid #f1a0f9;
+      border-radius: 6px;
+      font-size: 1rem;
+      outline-color: #d94fe2;
+    }
+    button {
+      margin-top: 1.5rem;
+      width: 100%;
+      background: #d94fe2;
+      border: none;
+      color: white;
+      padding: 0.8rem 0;
+      font-size: 1.1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background: #b14ac0;
+    }
+    .login-link {
+      margin-top: 1rem;
+      display: block;
+      text-align: center;
+      color: #a948c1;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .login-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>สมัครสมาชิก Cherry on Top</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.username.label_tag }}
+      {{ form.username }}
+
+      {{ form.nickname.label_tag }}
+      {{ form.nickname }}
+
+      {{ form.profile_image.label_tag }}
+      {{ form.profile_image }}
+
+      {{ form.password1.label_tag }}
+      {{ form.password1 }}
+
+      {{ form.password2.label_tag }}
+      {{ form.password2 }}
+
+      <button type="submit">สมัครสมาชิก</button>
+    </form>
+    <a href="{% url 'login' %}" class="login-link">มีบัญชีแล้ว? เข้าสู่ระบบ</a>
+  </div>
+</body>
+</html>
