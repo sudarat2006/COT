@@ -1,0 +1,306 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}เมนูอาหาร - Cherry on Top{% endblock %}
+
+{% block content %}
+<div class="menu-header text-center mb-5">
+    <h1 class="page-title">🍽️ เมนูขนมหวาน</h1>
+    <p class="lead text-muted">ขนมหวานและเครื่องดื่มสดใหม่ ปรุงด้วยความรักทุกวัน</p>
+</div>
+
+<!-- Filter Buttons -->
+<div class="text-center mb-4">
+    <div class="btn-group" role="group" aria-label="Menu Categories">
+        <button type="button" class="btn btn-outline-pink active" onclick="filterMenu('all')">ทั้งหมด</button>
+        <button type="button" class="btn btn-outline-pink" onclick="filterMenu('main')">ขนมหวานที่มาแล้วต้องลอง</button>
+        <button type="button" class="btn btn-outline-pink" onclick="filterMenu('dessert')">ขนมเค้กจัดวันเกิด</button>
+        <button type="button" class="btn btn-outline-pink" onclick="filterMenu('drink')">เครื่องดื่ม</button>
+        <button type="button" class="btn btn-outline-pink" onclick="filterMenu('bakery')">เบเกอรี่อบสดใหม่ทุกวัน</button>
+    </div>
+</div>
+
+<!-- จานหลัก -->
+<div class="menu-section" data-category="main">
+    <h2 class="menu-category-title">
+        <i class="bi bi-bowl-hot"></i> ขนมหวานที่มาแล้วต้องลอง
+    </h2>
+    <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/2f/ab/80/2fab80ed6403d277efb2bbc04862936f.jpg" class="menu-image" alt="ข้าวผัดกุ้ง">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">ทิมเบอร์ริง</h5>
+                    <p class="menu-description">ทิมเบอร์ริงมี5รสชาติ</p>
+                    <div class="menu-price">59฿</div>
+                        <span class="rating-text">(4.5/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+                <div class="menu-badge">เมนูแนะนำ</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/8a/9d/12/8a9d12c0f543f8e7a2b4c8d9e5f6a7b8.jpg" class="menu-image" alt="ผัดไทย">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">ทิมเบอร์ริง</h5>
+                    <p class="menu-description">ทิมเบอร์ริงชาเขียว</p>
+                    <div class="menu-price">59฿</div>
+                        <span class="rating-text">(4.2/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/5c/8d/3e/5c8d3ea1b2c4d5f6g7h8i9j0k1l2m3n4.jpg" class="menu-image" alt="ส้มตำไทย">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">ทิมเบอร์ริง</h5>
+                    <p class="menu-description">ทิมเบอร์ริ บลูเบอร์รี่</p>
+                    <div class="menu-price">59฿</div>
+
+                        <span class="rating-text">(5.0/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+                <div class="menu-badge best-seller">เมนูขายดี</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/7d/2e/5f/7d2e5f9a8b3c1d4e6f7g8h9i0j1k2l3m.jpg" class="menu-image" alt="แกงเขียวหวาน">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">ทิมเบอร์ริง ชาเขียว</h5>
+                    <p class="menu-description">ทิมเบอร์ริง ชาเขียวใส่แน่นๆ</p>
+                    <div class="menu-price">59฿</div>
+            
+                        <span class="rating-text">(4.3/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/9e/4f/7a/9e4f7ab5c2d6e8f1g3h4i5j6k7l8m9n0.jpg" class="menu-image" alt="ลาบหมู">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">ทิมเบอร์ริง วนิลา</h5>
+                    <p class="menu-description">ทิมเบอร์ริง วนิลา</p>
+                    <div class="menu-price">59฿</div>
+                    
+                        <span class="rating-text">(4.1/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/1a/6b/8c/1a6b8cd9e2f3a4b5c6d7e8f9g0h1i2j3.jpg" class="menu-image" alt="ข้าวซอยไก่">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">ทิมเบอร์ริง</h5>
+                    <p class="menu-description">ทิมเบอร์ริง สตอเบอร์รี่</p>
+                    <div class="menu-price">59฿</div>
+                    
+                        <span class="rating-text">(4.4/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ขนมหวาน -->
+<div class="menu-section" data-category="dessert">
+    <h2 class="menu-category-title">
+        <i class="bi bi-cake2"></i> ขนมเค้กจัดวันเกิด
+    </h2>
+    <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/f6/24/8c/f6248cb549737f1b72ecc198b67a6d23.jpg" class="menu-image" alt="เค้กช็อคโกแลต">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">เค้กผลไม้</h5>
+                    <p class="menu-description">เค้กผลไม้ มาพร้อมกับวิปครีม </p>
+                    <div class="menu-price">135฿</div>
+                  
+                        <span class="rating-text">(4.9/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/f6/24/8c/f6248cb549737f1b72ecc198b67a6d23.jpg" class="menu-image" alt="เค้กช็อคโกแลต">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">เค้กช็อคโกแลต</h5>
+                    <p class="menu-description">เค้กช็อกโกแลต หอมหวาน ช็อคโกแลตเข้มข้น </p>
+                    <div class="menu-price">150฿</div>
+                  
+                        <span class="rating-text">(4.9/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+                <div class="menu-badge best-seller">เมนูขายดี</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/12/3e/fa/123efa47a2cb03eb6869e9c08d79ff26.jpg" class="menu-image" alt="ชีสเค้ก">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">เค้กสตอเบอร์รี่ช็อกโกแล็ต</h5>
+                    <p class="menu-description">สตอเบอร์รี่สดใหม่มาพร้อมกับช็อคโกแล็คเข้มข้น</p>
+                    <div class="menu-price">160฿</div>
+                
+                        <span class="rating-text">(4.7/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/1200x/8b/cc/e1/8bcce183fc17ac655ea0aca027f56454.jpg" class="menu-image" alt="ทิรามิสุ">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">เค้กชาเขียว</h5>
+                    <p class="menu-description">เนื้อมนุ่มละมุนลิ้น ชาเขียวเข้มข้น </p>
+                    <div class="menu-price">160฿</div>
+                        <span class="rating-text">(4.6/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- เครื่องดื่ม -->
+<div class="menu-section" data-category="drink">
+    <h2 class="menu-category-title">
+        <i class="bi bi-cup"></i> เครื่องดื่ม
+    </h2>
+    <div class="row g-4 mb-5">
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/4d/7a/1b/4d7a1b8c9e2f3a4b5c6d7e8f9a0b1c2d.jpg" class="menu-image" alt="ชาไทย">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">ชาไทยโบราณ</h5>
+                    <p class="menu-description">ชาไทยสูตรต้นตำรับ หอมหวาน เสิร์ฟเย็นจัด</p>
+                    <div class="menu-price">฿60</div>
+                    <div class="menu-rating">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star text-warning"></i>
+                        <span class="rating-text">(4.3/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+                <div class="menu-badge best-seller">ขายดี</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/a1/b2/c3/a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6.jpg" class="menu-image" alt="ชาเขียว">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">ชาเขียวมัทฉะเย็น</h5>
+                    <p class="menu-description">ชาเขียวมัทฉะแท้จากญี่ปุ่น หอมหวานมัน</p>
+                    <div class="menu-price">฿90</div>
+                    <div class="menu-rating">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-half text-warning"></i>
+                        <span class="rating-text">(4.5/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/f8/e7/d6/f8e7d6c5b4a3f2e1d0c9b8a7f6e5d4c3.jpg" class="menu-image" alt="ชามะนาว">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">ชามะนาวปั่น</h5>
+                    <p class="menu-description">ชาดำเข้มข้น ผสมมะนาวสด เปรี้ยวหวานชื่นใจ</p>
+                    <div class="menu-price">฿65</div>
+                    <div class="menu-rating">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star text-warning"></i>
+                        <span class="rating-text">(4.4/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+                <div class="menu-badge">แนะนำ</div>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <div class="menu-card">
+                <img src="https://i.pinimg.com/736x/2b/3c/4d/2b3c4d5e6f7a8b9c0d1e2f3a4b5c6d7e.jpg" class="menu-image" alt="ชาเย็น">
+                <div class="menu-card-body">
+                    <h5 class="menu-title">ชาเย็นดั้งเดิม</h5>
+                    <p class="menu-description">ชาดำโบราณ หวานมัน เย็นสดชื่น สไตล์คลาสสิก</p>
+                    <div class="menu-price">฿55</div>
+                    <div class="menu-rating">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star text-warning"></i>
+                        <span class="rating-text">(4.1/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
