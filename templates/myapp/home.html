@@ -1,67 +1,79 @@
-{% extends 'myapp/base.html' %}
+{% extends 'base.html' %}
 
 {% block title %}หน้าแรก - Cherry on Top{% endblock %}
 
-<section class="hero-section">
-    <h1 class="hero-title">🍒 ยินดีต้อนรับสู่ Cherry on Top</h1>
-    <p class="hero-subtitle">ร้านอาหารที่จะทำให้ทุกมื้ออาหารของคุณพิเศษยิ่งขึ้น</p>
-    <div class="mt-4">
+{% block content %}
+<section class="hero-section text-center py-5 bg-light">
+    <h1 class="hero-title display-4 mb-3">🍒 ยินดีต้อนรับสู่ Cherry on Top</h1>
+    <p class="hero-subtitle lead mb-4">ร้านอาหารที่จะทำให้ทุกมื้ออาหารของคุณพิเศษยิ่งขึ้น</p>
+    <div>
         <a href="{% url 'menu' %}" class="btn btn-primary btn-lg me-3">ดูเมนูอาหาร</a>
         <a href="{% url 'delivery' %}" class="btn btn-outline-primary btn-lg">สั่งอาหารเดลิเวอรี่</a>
     </div>
 </section>
 
 <!-- Features Section -->
-<section class="features-section">
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="feature-card">
-                <i class="bi bi-heart-fill feature-icon"></i>
-                <h3 class="feature-title">ทำด้วยความรัก</h3>
-                <p class="feature-text">ทุกเมนูของเราปรุงด้วยส่วนผสมคุณภาพเยี่ยมและความใส่ใจในทุกรายละเอียด</p>
+<section class="features-section py-5">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md-4">
+                <div class="feature-card p-4 border rounded shadow-sm h-100">
+                    <i class="bi bi-heart-fill text-danger mb-3" style="font-size: 2.5rem;"></i>
+                    <h3 class="feature-title mb-2">ทำด้วยความรัก</h3>
+                    <p class="feature-text text-muted">ทุกเมนูของเราปรุงด้วยส่วนผสมคุณภาพเยี่ยมและความใส่ใจในทุกรายละเอียด</p>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="feature-card">
-                <i class="bi bi-clock-fill feature-icon"></i>
-                <h3 class="feature-title">บริการรวดเร็ว</h3>
-                <p class="feature-text">จัดส่งอาหารถึงมือคุณอย่างรวดเร็วและอุ่นใหม่สดใส</p>
+            <div class="col-md-4">
+                <div class="feature-card p-4 border rounded shadow-sm h-100">
+                    <i class="bi bi-clock-fill text-primary mb-3" style="font-size: 2.5rem;"></i>
+                    <h3 class="feature-title mb-2">บริการรวดเร็ว</h3>
+                    <p class="feature-text text-muted">จัดส่งอาหารถึงมือคุณอย่างรวดเร็วและอุ่นใหม่สดใส</p>
+                </div>
             </div>
-        </div>
-        <div class="col-md-4">
-            <div class="feature-card">
-                <i class="bi bi-award-fill feature-icon"></i>
-                <h3 class="feature-title">คุณภาพพรีเมียม</h3>
-                <p class="feature-text">มาตรฐานระดับพรีเมียมในทุกจาน รับประกันความอร่อย</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="gallery-section">
-    <h2 class="section-title">🖼️ ชมภาพอาหารน่าอร่อย</h2>
-    <div class="gallery-grid">
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/1200x/2f/ab/80/2fab80ed6403d277efb2bbc04862936f.jpg" alt="ขนมหวานจานพิเศษ" class="gallery-img">
-            <div class="gallery-overlay">
-                <div class="gallery-title">เมนูพิเศษประจำวัน</div>
-                <div class="gallery-desc">รสชาติเข้มข้น หอมหวานน่าลิ้มลอง</div>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/736x/12/3e/fa/123efa47a2cb03eb6869e9c08d79ff26.jpg" alt="เครื่องดื่ม" class="gallery-img">
-            <div class="gallery-overlay">
-                <div class="gallery-title">เครื่องดื่มสดชื่น</div>
-                <div class="gallery-desc">เครื่องดื่มหลากหลายรส เย็นชื่นใจ</div>
-            </div>
-        </div>
-        <div class="gallery-item">
-            <img src="https://i.pinimg.com/736x/a9/c8/00/a9c800d3c9c1c3cacf8e16e3d892a67e.jpg" alt="ขนมหวาน" class="gallery-img">
-            <div class="gallery-overlay">
-                <div class="gallery-title">ขนมหวานโฮมเมด</div>
-                <div class="gallery-desc">หวานนิดเดียว ฟินได้ทั้งวัน</div>
+            <div class="col-md-4">
+                <div class="feature-card p-4 border rounded shadow-sm h-100">
+                    <i class="bi bi-award-fill text-warning mb-3" style="font-size: 2.5rem;"></i>
+                    <h3 class="feature-title mb-2">คุณภาพพรีเมียม</h3>
+                    <p class="feature-text text-muted">มาตรฐานระดับพรีเมียมในทุกจาน รับประกันความอร่อย</p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- Gallery Section -->
+<section class="gallery-section py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title text-center mb-4">🖼️ ชมภาพอาหารน่าอร่อย</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="gallery-item position-relative overflow-hidden rounded shadow-sm">
+                    <img src="https://i.pinimg.com/1200x/2f/ab/80/2fab80ed6403d277efb2bbc04862936f.jpg" alt="ขนมหวานจานพิเศษ" class="img-fluid">
+                    <div class="gallery-overlay position-absolute bottom-0 start-0 w-100 p-3 text-white bg-dark bg-opacity-50">
+                        <h5 class="gallery-title mb-1">เมนูพิเศษประจำวัน</h5>
+                        <p class="gallery-desc mb-0">รสชาติเข้มข้น หอมหวานน่าลิ้มลอง</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gallery-item position-relative overflow-hidden rounded shadow-sm">
+                    <img src="https://i.pinimg.com/736x/12/3e/fa/123efa47a2cb03eb6869e9c08d79ff26.jpg" alt="เครื่องดื่ม" class="img-fluid">
+                    <div class="gallery-overlay position-absolute bottom-0 start-0 w-100 p-3 text-white bg-dark bg-opacity-50">
+                        <h5 class="gallery-title mb-1">เครื่องดื่มสดชื่น</h5>
+                        <p class="gallery-desc mb-0">เครื่องดื่มหลากหลายรส เย็นชื่นใจ</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="gallery-item position-relative overflow-hidden rounded shadow-sm">
+                    <img src="https://i.pinimg.com/736x/a9/c8/00/a9c800d3c9c1c3cacf8e16e3d892a67e.jpg" alt="ขนมหวาน" class="img-fluid">
+                    <div class="gallery-overlay position-absolute bottom-0 start-0 w-100 p-3 text-white bg-dark bg-opacity-50">
+                        <h5 class="gallery-title mb-1">ขนมหวานโฮมเมด</h5>
+                        <p class="gallery-desc mb-0">หวานนิดเดียว ฟินได้ทั้งวัน</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
