@@ -1,0 +1,14 @@
+{
+    "builds": [
+      {
+        "src": "paohai/wsgi.py",
+        "use": "@vercel/python"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "paohai/wsgi.py"
+      }
+    ]
+  }
