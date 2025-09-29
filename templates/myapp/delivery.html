@@ -1,0 +1,598 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}บริการจัดส่ง - Cherry on Top{% endblock %}
+
+{% block content %}
+<div class="delivery-header text-center mb-5">
+    <h1 class="page-title">🚚 บริการจัดส่ง</h1>
+    <p class="lead text-muted">จัดส่งถึงหน้าบ้านคุณ รวดเร็ว ปลอดภัย ด้วยความใส่ใจ</p>
+</div>
+
+<!-- Hero Card -->
+<div class="row mb-5">
+    <div class="col-12">
+        <div class="delivery-hero-card">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h2 class="hero-title">🕐 จัดส่งเร็วใน 30 นาที</h2>
+                        <p class="hero-text">
+                            สั่งอาหารกับเราแล้วได้รับภายใน 30-45 นาที! 
+                            เราใส่ใจทุกรายละเอียด ตั้งแต่การเตรียมอาหารจนถึงมือคุณ
+                        </p>
+                        <div class="hero-features">
+                            <div class="feature-item">
+                                <i class="bi bi-shield-check text-success"></i>
+                                <span>ปลอดภัย มีประกัน</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-thermometer-snow text-info"></i>
+                                <span>รักษาอุณหภูมิ</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-geo-alt text-danger"></i>
+                                <span>ติดตามได้เรียลไทม์</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <img src="https://i.pinimg.com/736x/2a/5b/8c/2a5b8cd4e6f7a9b1c2d3e4f5g6h7i8j9.jpg" 
+                             alt="บริการจัดส่ง" class="img-fluid rounded-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Service Features -->
+<div class="row g-4 mb-5">
+    <div class="col-md-4">
+        <div class="service-card h-100">
+            <div class="service-icon">
+                <i class="bi bi-clock text-primary"></i>
+            </div>
+            <h4 class="service-title">รวดเร็วทันใจ</h4>
+            <p class="service-description">
+                จัดส่งภายใน 30-45 นาที หลังจากยืนยันคำสั่งซื้อ 
+                ไรเดอร์มืออาชีพพร้อมส่งมอบความอร่อยถึงบ้านคุณ
+            </p>
+            <div class="service-time">
+                <strong>เวลาจัดส่ง:</strong> 30-45 นาที
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="service-card h-100">
+            <div class="service-icon">
+                <i class="bi bi-geo-alt text-success"></i>
+            </div>
+            <h4 class="service-title">ครอบคลุมทั่วไทย</h4>
+            <p class="service-description">
+                บริการจัดส่งครอบคลุมพื้นที่กรุงเทพมหานคร และปริมณฑล 
+                รัศมี 15 กิโลเมตร จากร้าน
+            </p>
+            <div class="service-coverage">
+                <strong>พื้นที่บริการ:</strong>
+                <ul class="coverage-list">
+                    <li>กรุงเทพฯ ทุกเขต</li>
+                    <li>นนทบุรี</li>
+                    <li>ปทุมธานี</li>
+                    <li>สมุทรปราการ</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <div class="service-card h-100">
+            <div class="service-icon">
+                <i class="bi bi-cash text-warning"></i>
+            </div>
+            <h4 class="service-title">ค่าจัดส่งประหยัด</h4>
+            <p class="service-description">
+                ค่าจัดส่งเพียง ฿30 ทุกคำสั่งซื้อ 
+                หรือฟรีค่าจัดส่ง เมื่อสั่งซื้อครบ ฿300 ขึ้นไป
+            </p>
+            <div class="pricing-info">
+                <div class="price-item">
+                    <strong>ค่าจัดส่งปกติ:</strong> ฿30
+                </div>
+                <div class="price-item special">
+                    <strong>ฟรีค่าจัดส่ง:</strong> เมื่อสั่งซื้อ ฿300+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- How to Order Section -->
+<div class="how-to-order mb-5">
+    <h2 class="section-title text-center mb-4">📱 วิธีการสั่งอาหาร</h2>
+    <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <div class="step-icon">
+                    <i class="bi bi-telephone text-primary"></i>
+                </div>
+                <h5 class="step-title">โทรสั่งอาหาร</h5>
+                <p class="step-description">
+                    โทร <strong>02-123-4567</strong><br>
+                    หรือ <strong>081-234-5678</strong><br>
+                    เปิดบริการ 08:00-22:00 น.
+                </p>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <div class="step-icon">
+                    <i class="bi bi-journal-text text-success"></i>
+                </div>
+                <h5 class="step-title">เลือกเมนู</h5>
+                <p class="step-description">
+                    บอกเมนูที่ต้องการ<br>
+                    จำนวน และความต้องการพิเศษ<br>
+                    พร้อมแจ้งที่อยู่จัดส่ง
+                </p>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <div class="step-icon">
+                    <i class="bi bi-credit-card text-info"></i>
+                </div>
+                <h5 class="step-title">ชำระเงิน</h5>
+                <p class="step-description">
+                    ชำระเงินปลายทาง<br>
+                    รับชำระเงินสด<br>
+                    หรือโอนผ่านแอปธนาคาร
+                </p>
+            </div>
+        </div>
+        
+        <div class="col-lg-3 col-md-6">
+            <div class="step-card">
+                <div class="step-number">4</div>
+                <div class="step-icon">
+                    <i class="bi bi-truck text-warning"></i>
+                </div>
+                <h5 class="step-title">รับอาหาร</h5>
+                <p class="step-description">
+                    ไรเดอร์จัดส่งถึงหน้าบ้าน<br>
+                    ภายใน 30-45 นาที<br>
+                    ตรวจสอบความครบถ้วน
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Info -->
+<div class="contact-section">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="contact-card">
+                <h3 class="contact-title">📞 ติดต่อสั่งอาหาร</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="bi bi-telephone-fill text-success"></i>
+                        <div class="contact-details">
+                            <strong>โทรศัพท์หลัก</strong><br>
+                            <a href="tel:021234567" class="contact-link">02-123-4567</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-phone text-success"></i>
+                        <div class="contact-details">
+                            <strong>มือถือ</strong><br>
+                            <a href="tel:0812345678" class="contact-link">081-234-5678</a>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <i class="bi bi-line text-success"></i>
+                        <div class="contact-details">
+                            <strong>Line Official</strong><br>
+                            <a href="#" class="contact-link">@cherryontop</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-6">
+            <div class="hours-card">
+                <h3 class="hours-title">🕒 เวลาบริการ</h3>
+                <div class="hours-info">
+                    <div class="hours-item">
+                        <strong>จันทร์ - ศุกร์</strong>
+                        <span class="hours-time">08:00 - 22:00 น.</span>
+                    </div>
+                    <div class="hours-item">
+                        <strong>เสาร์ - อาทิตย์</strong>
+                        <span class="hours-time">09:00 - 22:00 น.</span>
+                    </div>
+                    <div class="hours-item special">
+                        <strong>วันหยุดนักขัตฤกษ์</strong>
+                        <span class="hours-time">10:00 - 21:00 น.</span>
+                    </div>
+                </div>
+                <div class="current-status">
+                    <span class="status-badge open">🟢 เปิดบริการอยู่</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- FAQ Section -->
+<div class="faq-section mt-5">
+    <h2 class="section-title text-center mb-4">❓ คำถามที่พบบ่อย</h2>
+    <div class="accordion" id="deliveryFAQ">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    สั่งอาหารขั้นต่ำเท่าไหร่?
+                </button>
+            </h2>
+            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#deliveryFAQ">
+                <div class="accordion-body">
+                    คำสั่งซื้อขั้นต่ำ <strong>฿100</strong> สำหรับการจัดส่ง โดยค่าจัดส่ง ฿30 
+                    หรือสั่งซื้อครบ ฿300 ขึ้นไป ได้ฟรีค่าจัดส่ง
+                </div>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    ใช้เวลาจัดส่งนานแค่ไหน?
+                </button>
+            </h2>
+            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#deliveryFAQ">
+                <div class="accordion-body">
+                    โดยปกติใช้เวลา <strong>30-45 นาที</strong> หลังจากยืนยันคำสั่งซื้อ 
+                    ในช่วงเวลาเร่งด่วน (11:00-13:00, 18:00-20:00) อาจใช้เวลานานขึ้นประมาณ 15-20 นาที
+                </div>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    ชำระเงินอย่างไร?
+                </button>
+            </h2>
+            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#deliveryFAQ">
+                <div class="accordion-body">
+                    รับชำระเงินสดปลายทาง หรือโอนเงินผ่านแอปธนาคาร (กสิกรไทย, กรุงเทพ, ไทยพาณิชย์) 
+                    โดยแจ้งสลิปโอนก่อนจัดส่ง
+                </div>
+            </div>
+        </div>
+        
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    สามารถยกเลิกคำสั่งซื้อได้ไหม?
+                </button>
+            </h2>
+            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#deliveryFAQ">
+                <div class="accordion-body">
+                    สามารถยกเลิกได้ภายใน <strong>5 นาที</strong> หลังจากสั่ง 
+                    หากเกินเวลานี้และอาหารเริ่มการปรุงแล้ว จะไม่สามารถยกเลิกได้
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action -->
+<div class="cta-section text-center mt-5">
+    <div class="cta-card">
+        <h3 class="cta-title">🍽️ พร้อมสั่งอาหารแล้วใช่ไหม?</h3>
+        <p class="cta-description">โทรมาสั่งเลย! อาหารอร่อยๆ กำลังรอคุณอยู่</p>
+        <div class="cta-buttons">
+            <a href="tel:021234567" class="btn btn-primary btn-lg me-3">
+                <i class="bi bi-telephone-fill"></i> โทรสั่งเลย 02-123-4567
+            </a>
+            <a href="#" class="btn btn-success btn-lg">
+                <i class="bi bi-line"></i> Line: @cherryontop
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Additional custom styles for delivery page */
+.delivery-hero-card {
+    background: linear-gradient(135deg, var(--pale-pink) 0%, #f3e8ff 100%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(217, 70, 239, 0.15);
+    margin-bottom: 30px;
+}
+
+.hero-title {
+    color: var(--primary-pink);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    color: var(--gray-text);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.hero-features {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 500;
+}
+
+.service-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px var(--shadow);
+    border-color: var(--secondary-pink);
+}
+
+.service-icon i {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.service-title {
+    color: var(--primary-pink);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.service-description {
+    color: var(--gray-text);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.service-time, .pricing-info {
+    background: var(--pale-pink);
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 0.95rem;
+}
+
+.coverage-list {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.coverage-list li {
+    padding: 5px 0;
+    color: var(--gray-text);
+}
+
+.price-item {
+    margin-bottom: 8px;
+}
+
+.price-item.special {
+    color: var(--primary-pink);
+    font-size: 1.1rem;
+}
+
+.step-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    position: relative;
+    height: 100%;
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--gradient-primary);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.step-icon i {
+    font-size: 3rem;
+    margin: 20px 0 15px 0;
+}
+
+.step-title {
+    color: var(--primary-pink);
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.step-description {
+    color: var(--gray-text);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.contact-card, .hours-card {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    height: 100%;
+}
+
+.contact-title, .hours-title {
+    color: var(--primary-pink);
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.contact-item, .hours-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.contact-item i {
+    font-size: 1.5rem;
+    min-width: 24px;
+}
+
+.contact-link {
+    color: var(--primary-pink);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-link:hover {
+    color: var(--secondary-pink);
+}
+
+.hours-item {
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.hours-item:last-child {
+    border-bottom: none;
+}
+
+.hours-item.special {
+    color: var(--purple-accent);
+}
+
+.hours-time {
+    font-weight: 600;
+    color: var(--primary-pink);
+}
+
+.current-status {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.status-badge.open {
+    background: #d4edda;
+    color: #155724;
+}
+
+.accordion-item {
+    border: 1px solid rgba(217, 70, 239, 0.1);
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.accordion-button {
+    background: var(--pale-pink);
+    color: var(--primary-pink);
+    font-weight: 600;
+}
+
+.accordion-button:not(.collapsed) {
+    background: var(--primary-pink);
+    color: white;
+}
+
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(217, 70, 239, 0.25);
+}
+
+.cta-card {
+    background: var(--gradient-primary);
+    color: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px var(--shadow);
+}
+
+.cta-title {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.cta-description {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.cta-buttons .btn {
+    margin: 10px;
+    padding: 15px 30px;
+    font-weight: 600;
+    border-radius: 25px;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .delivery-hero-card {
+        padding: 20px;
+    }
+    
+    .hero-features {
+        margin-top: 20px;
+    }
+    
+    .cta-buttons .btn {
+        display: block;
+        margin: 10px auto;
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .step-card {
+        margin-bottom: 30px;
+    }
+}
+</style>
+
+{% endblock %}
