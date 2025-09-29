@@ -1,5 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+
 
 # ✅ เปลี่ยนชื่อฟังก์ชัน login เพื่อไม่ชนกับระบบของ Django
 def login_view(request):
@@ -21,6 +24,35 @@ def delivery(request):
 
 def trackorder(request):
     return render(request, 'myapp/trackorder.html')
+
+def register_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST, request.FILES)  # ถ้ามีไฟล์ (รูปโปรไฟล์) ให้ใส่ด้วย
+        if form.is_valid():
+            form.save()  # สร้าง user ใหม่
+            # ไม่ล็อกอินให้อัตโนมัติ
+            return redirect('login')  # ชื่อ url ของหน้าล็อคอิน
+    else:
+        form = UserCreationForm()
+    return render(request, 'register.html', {'form': form})
+
+def register(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+
+        if password1 == password2:
+            try:
+                User.objects.create_user(username=username, password=password1)
+                messages.success(request, "สมัครสมาชิกสำเร็จ! กรุณาเข้าสู่ระบบ")
+                return redirect('login')  # ชื่อ URL สำหรับหน้าล็อกอิน
+            except:
+                messages.error(request, "ชื่อผู้ใช้นี้มีคนใช้แล้ว")
+        else:
+            messages.error(request, "รหัสผ่านไม่ตรงกัน")
+    return render(request, 'register.html')
+
 
 
 def order_status(request):

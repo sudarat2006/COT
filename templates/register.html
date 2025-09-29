@@ -78,20 +78,15 @@
     <h1>สมัครสมาชิก Cherry on Top</h1>
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
-      {{ form.username.label_tag }}
-      {{ form.username }}
 
-      {{ form.nickname.label_tag }}
-      {{ form.nickname }}
+      <label for="username">ชื่อผู้ใช้</label>
+      <input type="text" id="username" name="username" required>
 
-      {{ form.profile_image.label_tag }}
-      {{ form.profile_image }}
+      <label for="password1">รหัสผ่าน</label>
+      <input type="password" id="password1" name="password1" required>
 
-      {{ form.password1.label_tag }}
-      {{ form.password1 }}
-
-      {{ form.password2.label_tag }}
-      {{ form.password2 }}
+      <label for="password2">ยืนยันรหัสผ่าน</label>
+      <input type="password" id="password2" name="password2" required>
 
       <button type="submit">สมัครสมาชิก</button>
     </form>
