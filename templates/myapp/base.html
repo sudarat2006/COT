@@ -1,0 +1,616 @@
+<!-- myapp/templates/myapp/base.html -->
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Cherry on Top{% endblock %}</title>
+    
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Sriracha:wght@400&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-pink: #d946ef;
+            --secondary-pink: #ec4899;
+            --light-pink: #f8bbd9;
+            --pale-pink: #fdf2f8;
+            --purple-accent: #a855f7;
+            --white: #ffffff;
+            --gray-text: #666;
+            --shadow: rgba(217, 70, 239, 0.25);
+            --gradient-primary: linear-gradient(135deg, #d946ef 0%, #ec4899 50%, #a855f7 100%);
+            --gradient-light: linear-gradient(135deg, rgba(217, 70, 239, 0.1) 0%, rgba(236, 72, 153, 0.1) 50%, rgba(168, 85, 247, 0.1) 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: linear-gradient(135deg, var(--pale-pink) 0%, #f3e8ff 50%, #fce7f3 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background: var(--gradient-primary);
+            box-shadow: 0 4px 20px var(--shadow);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar-brand {
+            font-family: 'Sriracha', cursive;
+            color: white !important;
+            font-weight: bold;
+            font-size: 1.8rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            margin: 0 10px;
+            padding: 8px 15px !important;
+            border-radius: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Content Container */
+        .content-container {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 30px;
+            margin: 20px auto 30px;
+            max-width: 1200px;
+            box-shadow: 0 10px 30px rgba(217, 70, 239, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            text-align: center;
+            padding: 40px 0;
+            background: var(--gradient-light);
+            margin-bottom: 0;
+        }
+
+        /* Carousel Section */
+        .carousel-section {
+            padding: 30px 0;
+            background: var(--pale-pink);
+        }
+
+        .carousel-custom {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .carousel-img {
+            height: 400px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 5%;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(217, 70, 239, 0.8);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+
+        .carousel-control-prev-icon:hover,
+        .carousel-control-next-icon:hover {
+            background-color: var(--primary-pink);
+        }
+
+        .hero-title {
+            font-family: 'Sriracha', cursive;
+            color: var(--primary-pink);
+            font-size: 3rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+        }
+
+        .hero-subtitle {
+            color: var(--gray-text);
+            font-size: 1.2rem;
+            font-weight: 300;
+        }
+
+        /* Features Section */
+        .features-section {
+            margin: 40px 0;
+        }
+
+        .feature-card {
+            background: var(--white);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            height: 100%;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px var(--shadow);
+            border-color: var(--secondary-pink);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-pink);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-title {
+            color: var(--primary-pink);
+            font-weight: 600;
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .feature-text {
+            color: var(--gray-text);
+            font-size: 0.95rem;
+        }
+
+        /* Gallery Section */
+        .gallery-section {
+            margin: 50px 0;
+        }
+
+        .section-title {
+            font-family: 'Sriracha', cursive;
+            color: var(--primary-pink);
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            aspect-ratio: 1;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 30px var(--shadow);
+        }
+
+        .gallery-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .gallery-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        /* About Section */
+        .about-section {
+            background: var(--gradient-light);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .about-text {
+            color: var(--gray-text);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-pink);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--gray-text);
+            font-weight: 500;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding: 30px 0;
+            background: var(--gradient-primary);
+            color: white;
+            text-align: center;
+            font-weight: 400;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.8;
+        }
+
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .content-container {
+                margin: 20px;
+                padding: 20px;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+            }
+            
+            .stats-row {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+            }
+
+            .carousel-img {
+                height: 250px;
+            }
+
+            .carousel-custom {
+                max-width: 100%;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}">🍒 Cherry on Top</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="{% url 'home' %}"><i class="bi bi-house-door"></i> หน้าแรก</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'menu' %}"><i class="bi bi-journal-text"></i> เมนูอาหาร</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'delivery' %}"><i class="bi bi-truck"></i> บริการจัดส่ง</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'trackorder' %}"><i class="bi journal-text"></i> ติดตามคำสั่งซื้อ</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (ก่อน container) -->
+    <section class="hero-section">
+        <div class="container">
+            <h1 class="hero-title">🍒 ยินดีต้อนรับสู่ Cherry on Top</h1>
+            <p class="hero-subtitle">ร้านอาหารที่จะทำให้ทุกมื้ออาหารของคุณพิเศษยิ่งขึ้น</p>
+        </div>
+    </section>
+
+    <!-- Carousel Section -->
+    <section class="carousel-section">
+        <div class="container">
+            <div id="carouselExampleControls" class="carousel slide carousel-custom" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://i.pinimg.com/1200x/2f/ab/80/2fab80ed6403d277efb2bbc04862936f.jpg" class="d-block w-100 carousel-img" alt="เมนูพิเศษ">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.pinimg.com/736x/75/fa/2d/75fa2dbfe26f1e925865eaecaa357a99.jpg" class="d-block w-100 carousel-img" alt="อาหารน่าอร่อย">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://i.pinimg.com/736x/14/81/fd/1481fd5e4ffe693154b93dfc850870cb.jpg" class="d-block w-100 carousel-img" alt="เครื่องดื่มสดชื่น">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <div class="container content-container animate-fade-in">
+        {% block content %}
+
+        <!-- Gallery Section -->
+        <section class="gallery-section">
+            <h2 class="section-title">🖼️ ชมภาพขนมและเครื่องดื่มน่าอร่อย</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/6c/13/20/6c1320b7a68f0aa5ae9f08d916736c58.jpg" alt="อาหารจานพิเศษ" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">เมนูพิเศษประจำวัน</div>
+                        <div class="gallery-desc">รสชาติเข้มข้น หอมหวานน่าลิ้มลอง</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/f6/24/8c/f6248cb549737f1b72ecc198b67a6d23.jpg" alt="อาหารอร่อย" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">มีเค้กสำหรับจัดวันเกิด</div>
+                        <div class="gallery-desc">เลือกได้ตามใจชอบ อร่อยแน่นอน</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/12/3e/fa/123efa47a2cb03eb6869e9c08d79ff26.jpg" alt="เครื่องดื่ม" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">เครื่องดื่มสดชื่น</div>
+                        <div class="gallery-desc">เครื่องดื่มหลากหลายรส เย็นชื่นใจ</div>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/1200x/8b/cc/e1/8bcce183fc17ac655ea0aca027f56454.jpg" alt="ขนมหวาน" class="gallery-img">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title">ขนมหวานโฮมเมด</div>
+                        <div class="gallery-desc">หวานนิดเดียว ฟินได้ทั้งวัน</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <h2 class="section-title">🏪 เกี่ยวกับเรา</h2>
+            <p class="about-text">
+                Cherry on Top เป็นร้านอาหารที่ก่อตั้งขึ้นด้วยความรักในการทำอาหาร เรามุ่งมั่นที่จะนำเสนออาหารคุณภาพสูง 
+                ด้วยส่วนผสมสดใหม่และการปรุงรสที่ลงตัว ทุกจานที่ออกจากครัวของเรา คือการสร้างความสุขให้กับลูกค้าทุกท่าน
+            </p>
+            
+            <div class="stats-row">
+                <div class="stat-item">
+                    <span class="stat-number">200+</span>
+                    <span class="stat-label">ลูกค้าพอใจ</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30+</span>
+                    <span class="stat-label">เมนูหลากหลาย</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5⭐</span>
+                    <span class="stat-label">คะแนนรีวิว</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">2</span>
+                    <span class="stat-label">ปีประสบการณ์</span>
+                </div>
+            </div>
+        </section>
+
+        {% endblock %}
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-icons">
+                <a href="#"><i class="bi bi-instagram"></i></a>
+                <a href="#"><i class="bi bi-telephone"></i></a>
+            </div>
+            <div class="footer-links">
+                <a href="{% url 'home' %}">หน้าแรก</a>
+                <a href="{% url 'menu' %}">เมนูอาหาร</a>
+                <a href="{% url 'delivery' %}">บริการจัดส่ง</a>
+                <a href="{% url 'trackorder' %}">ติดตามคำสั่งซื้อ</a>
+            </div>
+            <p>&copy; 2025 Cherry on Top. สงวนลิขสิทธิ์ทุกประการ | ทำด้วยความรัก 💕</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script>
+        // Smooth scrolling animation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add intersection observer for animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+
+            // Add loading effect to images
+            const images = document.querySelectorAll('.gallery-img');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+            });
+        });
+
+        // Add hover effects to cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+
+</body>
+</html>
