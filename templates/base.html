@@ -13,27 +13,36 @@
 
   <style>
     body {
-      background: linear-gradient(to right, #eeaeca, #94bbe9);
+      background: linear-gradient(to right, #ff9a9e, #fad0c4); /* ชมพูหวาน ไล่เฉด */
       font-family: 'Prompt', sans-serif;
     }
     .navbar {
-      background: #d291bc;
+      background: #e91e63; /* ชมพูสดใส */
     }
     .nav-link {
       color: white !important;
+      font-weight: 600;
     }
     .nav-link.disabled {
       opacity: 0.6;
+      pointer-events: none; /* ปิดการคลิก */
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: #fff;
+    }
+    .navbar-toggler-icon {
+      filter: invert(1); /* เปลี่ยนไอคอน toggle เป็นสีขาว */
     }
   </style>
 </head>
 <body>
 
-<!-- ✅ Navbar -->
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand text-white" href="#">Cherry on Top</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <a class="navbar-brand" href="#">Cherry on Top</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -75,7 +84,7 @@
   </div>
 </nav>
 
-<!-- ✅ เนื้อหาหลัก -->
+<!-- เนื้อหาหลัก -->
 <div class="container mt-4">
   {% block content %}
   {% endblock %}
