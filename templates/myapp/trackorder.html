@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}ติดตามคำสั่งซื้อ - Cherry on Top{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+  <div class="card shadow p-4 mx-auto" style="max-width: 700px;">
+    <h1 class="mb-3">📦 ติดตามคำสั่งซื้อของคุณ</h1>
+    <p class="mb-1"><strong>ผู้สั่ง:</strong> {{ customer_name }}</p>
+
+    {% if order %}
+      <p><strong>สถานะ:</strong>
+        {% if order.status == 'delivering' %}
+          <span class="text-warning">กำลังจัดส่ง...</span>
+        {% elif order.status == 'pending' %}
+          <span class="text-secondary">รอดำเนินการ</span>
+        {% else %}
+          <span class="text-success">จัดส่งเรียบร้อยแล้ว</span>
+        {% endif %}
+      </p>
+
+      <h4>รายการขนมหวานที่สั่ง:</h4>
+      <ul class="list-group mb-3">
+        {% for item in order.items.all %}
+          <li class="list-group-item d-flex align-items-center">
+            {% if item.dessert.image_url %}
+              <img src="{{ item.dessert.image_url }}" alt="{{ item.dessert.name }}" width="60" height="60" class="me-3 rounded">
+            {% endif %}
+            <div>
+              <strong>{{ item.dessert.name }}</strong><br>
+              จำนวน: {{ item.quantity }} | ราคา: {{ item.dessert.price }} บาท
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <div class="text-end">
+        <strong>รวมทั้งหมด: {{ order.total_price }} บาท</strong>
+      </div>
+
+    {% else %}
+      <p>คุณไม่มีคำสั่งซื้อที่กำลังจัดส่งในขณะนี้</p>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}
