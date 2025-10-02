@@ -17,3 +17,4 @@ urlpatterns = [
 ]
 # Data loading and caching
 CHERRY_JSON_PATH = Path(settings.BASE_DIR) / 'cherry.json' 
+
