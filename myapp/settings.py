@@ -53,13 +53,32 @@ TEMPLATES = [{
 WSGI_APPLICATION = 'myapp.wsgi.application'
 
 # Database: ใช้ DATABASE_URL ถ้ามี (Postgres/MySQL ฯลฯ) ไม่เช่นนั้น fallback เป็น SQLite
-DATABASES = {
-    'default': dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR/'db.sqlite3'}",
-        conn_max_age=600,
-        ssl_require=not DEBUG
-    )
-}
+# DATABASES = {
+#     'default': dj_database_url.config(
+#         default=f"sqlite:///{BASE_DIR/'db.sqlite3'}",
+#         conn_max_age=600,
+#         ssl_require=not DEBUG
+#     )
+# }
+
+# Database configuration for Vercel
+if os.environ.get('VERCEL'):
+    # บน Vercel ใช้ /tmp เพราะ read-only filesystem
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': '/tmp/db.sqlite3',
+        }
+    }
+else:
+    # Local development
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=f"sqlite:///{BASE_DIR/'db.sqlite3'}",
+            conn_max_age=600,
+            ssl_require=False
+        )
+    }
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
