@@ -1,8 +1,15 @@
 {
-  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate --noinput",
-  "functions": { "api/index.py": { "runtime": "python3.11" } },
+  "version": 2,
+  "builds": [
+    {
+      "src": "myapp/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
   "routes": [
-    { "src": "/static/(.*)", "dest": "static/$1" },
-    { "src": "/(.*)", "dest": "api/index.py" }
+    {
+      "src": "/(.*)",
+      "dest": "myapp/app.py"
+    }
   ]
 }
