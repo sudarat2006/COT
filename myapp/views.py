@@ -8,9 +8,6 @@ from django.contrib.auth import authenticate, login
 
 
 
-# ✅ เปลี่ยนชื่อฟังก์ชัน login เพื่อไม่ชนกับระบบของ Django
-def login_view(request):
-    return render(request, 'myapp/login.html')
 
 
 def login_view(request):

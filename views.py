@@ -6,6 +6,7 @@ from functools import lru_cache
 import json
 from pathlib import Path
 
+
 # Create your views here.
 
 from django.urls import path
