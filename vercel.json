@@ -2,22 +2,14 @@
   "version": 2,
   "builds": [
     {
-      "src": "myapp/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "15mb",
-        "runtime": "python3.9"
-      }
+      "src": "myapp/wagi.py",
+      "use": "@vercel/python"
     }
   ],
   "routes": [
     {
-      "src": "/static/(.*)",
-      "dest": "/static/$1"
-    },
-    {
       "src": "/(.*)",
-      "dest": "myapp/wsgi.py"
+      "dest": "myapp/wagi.py"
     }
   ]
 }
