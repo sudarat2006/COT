@@ -3,6 +3,7 @@
 {% block title %}เมนูอาหาร - Cherry on Top{% endblock %}
 
 {% block content %}
+
 <div class="menu-header text-center mb-5">
     <h1 class="page-title">🍽️ เมนูขนมหวาน</h1>
     <p class="lead text-muted">ขนมหวานและเครื่องดื่มสดใหม่ ปรุงด้วยความรักทุกวัน</p>
@@ -15,22 +16,29 @@
         <button type="button" class="btn btn-outline-pink" onclick="filterMenu('main')">ขนมหวานที่มาแล้วต้องลอง</button>
         <button type="button" class="btn btn-outline-pink" onclick="filterMenu('dessert')">ขนมเค้กจัดวันเกิด</button>
         <button type="button" class="btn btn-outline-pink" onclick="filterMenu('drink')">เครื่องดื่ม</button>
-        <button type="button" class="btn btn-outline-pink" onclick="filterMenu('bakery')">เบเกอรี่อบสดใหม่ทุกวัน</button>
     </div>
 </div>
 
-<!-- จานหลัก -->
+<!-- ขนมหวานที่มาแล้วต้องลอง -->
 <div class="menu-section" data-category="main">
     <h2 class="menu-category-title">
         <i class="bi bi-bowl-hot"></i> ขนมหวานที่มาแล้วต้องลอง
     </h2>
+    <style>
+.menu-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+</style>
     <div class="row g-4 mb-5">
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/2f/ab/80/2fab80ed6403d277efb2bbc04862936f.jpg" class="menu-image" alt="ทิมเบอร์ริงรวมรส">
+                <img src="https://okaytoday.net/pics/101571/10157103.jpg" class="menu-image" alt="ทิมเบอร์ริงรวมรส">
                 <div class="menu-card-body">
                     <h5 class="menu-title">ทิมเบอร์ริง รวมรส</h5>
-                    <p class="menu-description">ทิมเบอร์ริงมี 5 รสชาติ</p>
+                    <p class="menu-description">ทิมเบอร์ริงมี 5 รสชาติ หวาน หอม เย็นชื่นใจ</p>
                     <div class="menu-price">59฿</div>
                     <span class="rating-text">(4.5/5)</span>
                     <button class="btn btn-pink w-100 mt-2">
@@ -43,10 +51,10 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/8a/9d/12/8a9d12c0f543f8e7a2b4c8d9e5f6a7b8.jpg" class="menu-image" alt="ทิมเบอร์ริงชาเขียว">
+                <img src="https://tse1.mm.bing.net/th/id/OIP.RxaXS-96OVbyFnAY5j6algHaJ4?rs=1&pid=ImgDetMain&o=7&rm=3" class="menu-image" alt="ทิมเบอร์ริงชาเขียว">
                 <div class="menu-card-body">
                     <h5 class="menu-title">ทิมเบอร์ริง ชาเขียว</h5>
-                    <p class="menu-description">ทิมเบอร์ริงชาเขียว</p>
+                    <p class="menu-description">ทิมเบอร์ริงชาเขียวหอมนุ่ม หวานกำลังดี</p>
                     <div class="menu-price">59฿</div>
                     <span class="rating-text">(4.2/5)</span>
                     <button class="btn btn-pink w-100 mt-2">
@@ -58,10 +66,10 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/5c/8d/3e/5c8d3ea1b2c4d5f6g7h8i9j0k1l2m3n4.jpg" class="menu-image" alt="ทิมเบอร์ริงบลูเบอร์รี่">
+                <img src="https://th.bing.com/th/id/OIP.gEKi1aWbHeA7x8baJIQ__QHaKe?w=146&h=207&c=7&r=0&o=7&pid=1.7&rm=3" class="menu-image" alt="ทิมเบอร์ริงบลูเบอร์รี่">
                 <div class="menu-card-body">
                     <h5 class="menu-title">ทิมเบอร์ริง บลูเบอร์รี่</h5>
-                    <p class="menu-description">ทิมเบอร์ริง บลูเบอร์รี่</p>
+                    <p class="menu-description">ทิมเบอร์ริง บลูเบอร์รี่สดใหม่ เปร้ยวหวาน</p>
                     <div class="menu-price">59฿</div>
                     <span class="rating-text">(5.0/5)</span>
                     <button class="btn btn-pink w-100 mt-2">
@@ -74,10 +82,10 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/7d/2e/5f/7d2e5f9a8b3c1d4e6f7g8h9i0j1k2l3m.jpg" class="menu-image" alt="ทิมเบอร์ริงชาเขียวแน่นๆ">
+                <img src="https://i.pinimg.com/736x/ab/fd/fd/abfdfd87efad52050dd080154e4c3fd9.jpg" class="menu-image" alt="ทิมเบอร์ริงช็อคโกแล็ต">
                 <div class="menu-card-body">
-                    <h5 class="menu-title">ทิมเบอร์ริง ชาเขียวแน่นๆ</h5>
-                    <p class="menu-description">ทิมเบอร์ริง ชาเขียวใส่แน่นๆ</p>
+                    <h5 class="menu-title">ทิมเบอร์ริง ช็อคโกแล็ตแน่นๆ</h5>
+                    <p class="menu-description">ทิมเบอร์ริง ช็อคโกแล็ตใส่แน่นๆ เข้มข้น</p>
                     <div class="menu-price">59฿</div>
                     <span class="rating-text">(4.3/5)</span>
                     <button class="btn btn-pink w-100 mt-2">
@@ -89,10 +97,10 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/9e/4f/7a/9e4f7ab5c2d6e8f1g3h4i5j6k7l8m9n0.jpg" class="menu-image" alt="ทิมเบอร์ริงวนิลา">
+                <img src="https://i.pinimg.com/736x/37/7e/a8/377ea880a8d01925107a2660deee82da.jpg" class="menu-image" alt="ทิมเบอร์ริงวนิลา">
                 <div class="menu-card-body">
                     <h5 class="menu-title">ทิมเบอร์ริง วนิลา</h5>
-                    <p class="menu-description">ทิมเบอร์ริง วนิลา</p>
+                    <p class="menu-description">ทิมเบอร์ริง วนิลา หอมนุ่ม รสชาติคลาสสิก</p>
                     <div class="menu-price">59฿</div>
                     <span class="rating-text">(4.1/5)</span>
                     <button class="btn btn-pink w-100 mt-2">
@@ -104,10 +112,10 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/1a/6b/8c/1a6b8cd9e2f3a4b5c6d7e8f9g0h1i2j3.jpg" class="menu-image" alt="ทิมเบอร์ริงสตอเบอร์รี่">
+                <img src="https://i.pinimg.com/736x/bf/5d/dc/bf5ddc605c8b1a0b4eccbbca11e2e459.jpg" class="menu-image" alt="ทิมเบอร์ริงโอริโอ้้">
                 <div class="menu-card-body">
-                    <h5 class="menu-title">ทิมเบอร์ริง สตอเบอร์รี่</h5>
-                    <p class="menu-description">ทิมเบอร์ริง สตอเบอร์รี่</p>
+                    <h5 class="menu-title">ทิมเบอร์ริง โอริโอ้</h5>
+                    <p class="menu-description">ทิมเบอร์ริง โอริโอ้</p>
                     <div class="menu-price">59฿</div>
                     <span class="rating-text">(4.4/5)</span>
                     <button class="btn btn-pink w-100 mt-2">
@@ -119,7 +127,7 @@
     </div>
 </div>
 
-<!-- ขนมหวาน -->
+<!-- ขนมเค้กจัดวันเกิด -->
 <div class="menu-section" data-category="dessert">
     <h2 class="menu-category-title">
         <i class="bi bi-cake2"></i> ขนมเค้กจัดวันเกิด
@@ -127,10 +135,10 @@
     <div class="row g-4 mb-5">
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/f6/24/8c/f6248cb549737f1b72ecc198b67a6d23.jpg" class="menu-image" alt="เค้กผลไม้">
+                <img src="https://i.pinimg.com/1200x/19/3d/d8/193dd810b98f043a5c1cf4d87457c28d.jpg" class="menu-image" alt="เค้กผลไม้">
                 <div class="menu-card-body">
                     <h5 class="menu-title">เค้กผลไม้</h5>
-                    <p class="menu-description">เค้กผลไม้ มาพร้อมกับวิปครีม </p>
+                    <p class="menu-description">เค้กผลไม้ มาพร้อมกับวิปครีม สดใหม่</p>
                     <div class="menu-price">135฿</div>
                     <span class="rating-text">(4.9/5)</span>
                     <button class="btn btn-pink w-100 mt-2">
@@ -139,12 +147,13 @@
                 </div>
             </div>
         </div>
+
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/12/3e/fa/123efa47a2cb03eb6869e9c08d79ff26.jpg" class="menu-image" alt="เค้กช็อคโกแลต">
+                <img src="https://i.pinimg.com/736x/7a/f4/ac/7af4aceb1093a6291a1f6a314a652d4f.jpg" class="menu-image" alt="เค้กช็อคโกแลต">
                 <div class="menu-card-body">
                     <h5 class="menu-title">เค้กช็อคโกแลต</h5>
-                    <p class="menu-description">เค้กช็อกโกแลต หอมหวาน ช็อคโกแลตเข้มข้น </p>
+                    <p class="menu-description">เค้กช็อกโกแลต หอมหวาน ช็อคโกแลตเข้มข้น</p>
                     <div class="menu-price">150฿</div>
                     <span class="rating-text">(4.9/5)</span>
                     <button class="btn btn-pink w-100 mt-2">
@@ -157,7 +166,7 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/12/3e/fa/123efa47a2cb03eb6869e9c08d79ff26.jpg" class="menu-image" alt="เค้กสตอเบอร์รี่ช็อกโกแลต">
+                <img src="https://i.pinimg.com/736x/64/69/a4/6469a4b2db2c7d04ed8934fdd19e44c8.jpg" class="menu-image" alt="เค้กสตอเบอร์รี่ช็อกโกแลต">
                 <div class="menu-card-body">
                     <h5 class="menu-title">เค้กสตอเบอร์รี่ช็อกโกแลต</h5>
                     <p class="menu-description">สตอเบอร์รี่สดใหม่มาพร้อมกับช็อคโกแลตเข้มข้น</p>
@@ -172,18 +181,22 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/1200x/8b/cc/e1/8bcce183fc17ac655ea0aca027f56454.jpg" class="menu-image" alt="เค้กชาเขียว">
+                <img src="https://i.pinimg.com/736x/18/10/34/1810342991603270aa4021a673029a86.jpg" class="menu-image" alt="เค้กชาเขียว">
                 <div class="menu-card-body">
                     <h5 class="menu-title">เค้กชาเขียว</h5>
-                    <p class="menu-description">เนื้อนุ่มละมุนลิ้น ชาเขียวเข้มข้น </p>
+                    <p class="menu-description">เนื้อนุ่มละมุนลิ้น ชาเขียวเข้มข้น หอมหวาน</p>
                     <div class="menu-price">160฿</div>
                     <span class="rating-text">(4.6/5)</span>
                     <button class="btn btn-pink w-100 mt-2">
                         <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
                     </button>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-
+<!-- เครื่องดื่ม -->
 <div class="menu-section" data-category="drink">
     <h2 class="menu-category-title">
         <i class="bi bi-cup"></i> เครื่องดื่ม
@@ -191,11 +204,11 @@
     <div class="row g-4 mb-5">
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/b8/c9/d0/b8c9d0e1f2g3h4i5j6k7l8m9n0o1p2q3.jpg" class="menu-image" alt="ชาไทย">
+                <img src="https://i.pinimg.com/736x/7a/0d/56/7a0d568be0750ed6aef2a00dc6a03a09.jpg" class="menu-image" alt="ชาไทย">
                 <div class="menu-card-body">
                     <h5 class="menu-title">ชาไทยโบราณ</h5>
                     <p class="menu-description">ชาไทยสูตรต้นตำรับ หอมหวาน เสิร์ฟเย็นจัด</p>
-                    <div class="menu-price">฿60</div>
+                    <div class="menu-price">60฿</div>
                     <div class="menu-rating">
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
@@ -214,11 +227,11 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/c7/d8/e9/c7d8e9f0g1h2i3j4k5l6m7n8o9p0q1r2.jpg" class="menu-image" alt="กาแฟลาเต้">
+                <img src="https://i.pinimg.com/736x/85/ca/a7/85caa796e00f8eccc334c6cdd835e578.jpg" class="menu-image" alt="กาแฟลาเต้">
                 <div class="menu-card-body">
-                    <h5 class="menu-title">คาเฟ่ ลาเต้</h5>
+                    <h5 class="menu-title">กาแฟลาเต้</h5>
                     <p class="menu-description">เอสเปรสโซ่เข้มข้นผสมนมสด ลาเต้อาร์ตสวยงาม</p>
-                    <div class="menu-price">฿85</div>
+                    <div class="menu-price">85฿</div>
                     <div class="menu-rating">
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
@@ -236,11 +249,11 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/f0/g1/h2/f0g1h2i3j4k5l6m7n8o9p0q1r2s3t4u5.jpg" class="menu-image" alt="สมูทตี้">
+                <img src="https://i.pinimg.com/1200x/42/7c/14/427c14781172f73813183b0724aa9e6e.jpg" class="menu-image" alt="สมูทตี้">
                 <div class="menu-card-body">
                     <h5 class="menu-title">สมูทตี้ผลไม้รวม</h5>
                     <p class="menu-description">สมูทตี้ผลไม้สดใส อุดมด้วยวิตามิน เย็นชื่นใจ</p>
-                    <div class="menu-price">฿95</div>
+                    <div class="menu-price">95฿</div>
                     <div class="menu-rating">
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
@@ -259,11 +272,11 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/a9/b0/c1/a9b0c1d2e3f4g5h6i7j8k9l0m1n2o3p4.jpg" class="menu-image" alt="น้ำส้มคั้นสด">
+                <img src="https://i.pinimg.com/736x/cc/98/38/cc9838758617204ba8f25ce37ce42750.jpg" class="menu-image" alt="น้ำส้มคั้นสด">
                 <div class="menu-card-body">
                     <h5 class="menu-title">น้ำส้มคั้นสด</h5>
                     <p class="menu-description">น้ำส้มสดใหม่ คั้นทันที อุดมไปด้วยวิตามินซี</p>
-                    <div class="menu-price">฿70</div>
+                    <div class="menu-price">70฿</div>
                     <div class="menu-rating">
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
@@ -281,11 +294,11 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/e6/f7/a8/e6f7a8b9c0d1e2f3g4h5i6j7k8l9m0n1.jpg" class="menu-image" alt="ชาเขียวมัทฉะ">
+                <img src="https://i.pinimg.com/1200x/94/e0/6d/94e06dd416c504dc42471ab82a3aed4c.jpg" class="menu-image" alt="ชาเขียวมัทฉะ">
                 <div class="menu-card-body">
                     <h5 class="menu-title">มัทฉะ ลาเต้เย็น</h5>
                     <p class="menu-description">ชาเขียวมัทฉะแท้จากญี่ปุ่น หอมหวานมัน</p>
-                    <div class="menu-price">฿90</div>
+                    <div class="menu-price">90฿</div>
                     <div class="menu-rating">
                         <i class="bi bi-star-fill text-warning"></i>
                         <i class="bi bi-star-fill text-warning"></i>
@@ -303,7 +316,46 @@
 
         <div class="col-md-6 col-lg-4">
             <div class="menu-card">
-                <img src="https://i.pinimg.com/736x/d2/e3/f4/d2e3f4g5h6i7j8k9l0m1n2o3p4q5r6s7.jpg" class="menu-image" alt="โกโก้เย็น">
+                <img src="https://i.pinimg.com/736x/49/ca/fc/49cafc6d9558067bee2d00a0263beb5b.jpg" class="menu-image" alt="โกโก้">
                 <div class="menu-card-body">
-                    
+                    <h5 class="menu-title">โกโก้</h5>
+                    <p class="menu-description">โกโก้เข้มข้น หอมหวานมัน เย็นสดชื่น</p>
+                    <div class="menu-price">75฿</div>
+                    <div class="menu-rating">
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star-fill text-warning"></i>
+                        <i class="bi bi-star text-warning"></i>
+                        <span class="rating-text">(4.2/5)</span>
+                    </div>
+                    <button class="btn btn-pink w-100 mt-2">
+                        <i class="bi bi-cart-plus"></i> เพิ่มลงตะกร้า
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function filterMenu(category) {
+    const sections = document.querySelectorAll('.menu-section');
+    const buttons = document.querySelectorAll('.btn-group button');
+    
+    // Update active button
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+    
+    // Show/hide sections
+    sections.forEach(section => {
+        if (category === 'all' || section.dataset.category === category) {
+            section.style.display = 'block';
+        } else {
+            section.style.display = 'none';
+        }
+    });
+}
+</script>
+
 {% endblock %}
