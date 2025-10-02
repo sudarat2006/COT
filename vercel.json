@@ -1,14 +1,9 @@
+
 {
-    "builds": [
-      {
-        "src": "myapp/wsgi.py",
-        "use": "@vercel/python"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "myapp/wsgi.py"
-      }
-    ]
-  }
+  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
+  "functions": { "api/index.py": { "runtime": "python3.11" } },
+  "routes": [
+    { "src": "/static/(.*)", "dest": "static/$1" },
+    { "src": "/(.*)", "dest": "api/index.py" }
+  ]
+}
